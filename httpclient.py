@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import socket
-
+IP = input('IPアドレスを入力してください: ')
 def send_msg(sock, msg):
     total_sent_len = 0
     total_msg_len = len(msg)
@@ -20,7 +20,7 @@ def recv_msg(sock, chunk_len=1024):
 
 def main():
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    client_socket.connect(('127.0.0.1', 60))
+    client_socket.connect((IP, 80))
     request_text = 'GET / HTTP/1.0\r\n\r\n'
     request_bytes = request_text.encode('ASCII')
     send_msg(client_socket, request_bytes)
