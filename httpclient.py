@@ -20,7 +20,7 @@ def recv_msg(sock, chunk_len=1024):
 
 def main():
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    client_socket.connect(('127.0.0.1', 80))
+    client_socket.connect(('127.0.0.1', 60))
     request_text = 'GET / HTTP/1.0\r\n\r\n'
     request_bytes = request_text.encode('ASCII')
     send_msg(client_socket, request_bytes)
