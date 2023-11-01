@@ -2,6 +2,7 @@
 
 import socket
 IP = input('IPアドレスを入力してください: ')
+PORT = input('ポート番号を入力してください: ')
 def send_msg(sock, msg):
     total_sent_len = 0
     total_msg_len = len(msg)
